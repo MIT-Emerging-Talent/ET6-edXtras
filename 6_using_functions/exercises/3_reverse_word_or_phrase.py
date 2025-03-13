@@ -10,6 +10,7 @@ Contains code sections marked for refactoring into a separate utility function.
 Adapted from https://github.com/DeNepo/inside-js/tree/main/07-using-functions/
 """
 from typing import Optional
+from utils.reverse_string import reverse_string
 
 
 def get_validated_input(prompt: str, 
@@ -59,17 +60,13 @@ def main() -> None:
         new_words = []
         for word in split_text:
             # BEGIN: refactor this to call `reverse`
-            reversed_word = ''
-            for i in range(len(word)):
-                reversed_word = word[i] + reversed_word
+            reversed_word = reverse_string(word)
             # END: refactor
             new_words.append(reversed_word)
         reversed_text = ' '.join(new_words)
     else:
         # BEGIN: refactor this to call `reverse`
-        reversed_text = ''
-        for char in origina:
-            reversed_text = char + reversed_text
+        reversed_text = reverse_string(original)
         # END: refactor
     
     print(f'Before: {original}\nAfter: {reversed_text}')

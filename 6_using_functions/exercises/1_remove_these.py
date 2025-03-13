@@ -27,8 +27,7 @@ while not isinstance(remove_these, str):  # Type check for defensive programming
     remove_these = input('Please enter the characters to remove: ').strip()
 
 # Use remove_characters to create a new value assigned to removified
-removified = __
+removified = remove_characters(original,remove_these)
 
 # Display results
 print(f'\nBefore: {original}\nAfter: {removified}')
-
