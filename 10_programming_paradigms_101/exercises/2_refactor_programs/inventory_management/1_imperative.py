@@ -28,6 +28,7 @@ while True:
         
         inventory[name] = {'price': price, 'quantity': quantity}
         print(f"{quantity} {name}(s) added to inventory")
+        total_value = sum(item['price'] * item['quantity'] for item in inventory.values())
 
     elif choice == '3':
         name = input("Enter item name to update: ")
@@ -35,11 +36,11 @@ while True:
             quantity = int(input("Enter new quantity: "))
             inventory[name]['quantity'] = quantity
             print(f"{name} quantity updated to {quantity}")
+            total_value = sum(item['price'] * item['quantity'] for item in inventory.values())
         else:
             print("Item not found in inventory")
 
     elif choice == '4':
-        total_value = sum(item['price'] * item['quantity'] for item in inventory.values())
         print(f"Total inventory value: ${total_value:.2f}")
 
     elif choice == '5':
