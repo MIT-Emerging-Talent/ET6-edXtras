@@ -1,3 +1,3 @@
 # Studying Algorithms
 
-Study, understand and understand algorithms.
+Study, visualize and understand algorithms.
